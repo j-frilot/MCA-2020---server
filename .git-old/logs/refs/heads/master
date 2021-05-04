@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 27ea10995bf4aacca66c990233fbca3dfe0a0197 j-frilot <frilotdr@gmail.com> 1619645916 -0500	commit (initial): added APIs for index
+27ea10995bf4aacca66c990233fbca3dfe0a0197 1559d43a63c249defdacf6ef7e131d265ae13ba8 j-frilot <frilotdr@gmail.com> 1619646006 -0500	commit: new route
+1559d43a63c249defdacf6ef7e131d265ae13ba8 67ece90f48d217a6b3358de89bbf12cb4834af65 j-frilot <frilotdr@gmail.com> 1619646326 -0500	commit: header routes
+67ece90f48d217a6b3358de89bbf12cb4834af65 fa9f8927d851f6839ded878f4fe00fd88a01b867 j-frilot <frilotdr@gmail.com> 1619669919 -0500	commit: added appointments table , endpoints
+fa9f8927d851f6839ded878f4fe00fd88a01b867 f8074654cdcc7ec7662b856aec3c3cb71b5d092c j-frilot <frilotdr@gmail.com> 1619738973 -0500	commit: added new tables to db, db queries, and new routes
+f8074654cdcc7ec7662b856aec3c3cb71b5d092c 4ce1ae3593ae738ac2844e67d85df0a0ca98cf0e j-frilot <frilotdr@gmail.com> 1619843978 -0500	commit: written qquries for form submissions and startedkeys for doc. specialties
+4ce1ae3593ae738ac2844e67d85df0a0ca98cf0e c6e4691b8762b8589c81256a960508cd4ed2bc7e j-frilot <frilotdr@gmail.com> 1620161599 -0500	commit: created dashboard table
