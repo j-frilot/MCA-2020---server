@@ -127,6 +127,8 @@ USE hospital;
 
 -- INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight)
 --     VALUES  ('ian', 'warner', 4, '2021-01-12', 'saviors covered', '414-965-7854', 'i need a new eye', 60, 180);
+
+
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
@@ -147,11 +149,17 @@ USE hospital;
 -- CREATE TABLE dashboard(
 --     section_id TINYINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 --     heading VARCHAR(30) NOT NULL,
---     body TEXT NOT NULL
+--     body TEXT NOT NULL,
+--     link VARCHAR(20)
 -- );
 
--- INSERT INTO dashboard (heading, body)
--- VALUES  ('find a doctor', 'Find the doctor who’s right for you. We are staffed by the nation’s top physicians.'),
---         ('COVID-19'     , 'COVID-19 vaccinations for are available at no cost. The General Hospital will allow one visitor per day for inpatients and those in our Emergency Department.'),
---         ('appointments' , "Find the doctor who’s right for you. The General is staffed by the nation's top physicians."),
---         ('find a doctor', "Find the doctor who’s right for you. We are staffed by the nation's top physicians.");
+-- INSERT INTO dashboard (heading, body, link)
+-- VALUES  ('find a doctor', 'Find the doctor who’s right for you. We are staffed by the nation’s top physicians.', 'physicians'),
+--         ('COVID-19'     , 'COVID-19 vaccinations for are available at no cost. The General Hospital will allow one visitor per day for inpatients and those in our Emergency Department.', 'covid'),
+--         ('appointments' , "Find the doctor who’s right for you. The General is staffed by the nation's top physicians.", 'appointments'),
+--         ('find a doctor', "Find the doctor who’s right for you. We are staffed by the nation's top physicians." , 'physicians');
+
+
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////////////////////////////////////////////
