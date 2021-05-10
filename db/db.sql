@@ -163,3 +163,46 @@ USE hospital;
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
+
+-- covid
+ 
+-- +-------------+-------------+------+-----+---------+----------------+
+-- | Field       | Type        | Null | Key | Default | Extra          |
+-- +-------------+-------------+------+-----+---------+----------------+
+-- | section_id  | tinyint     | NO   | PRI | NULL    | auto_increment |
+-- | heading_one | varchar(30) | YES  |     | NULL    |                |
+-- | heading_two | varchar(30) | YES  |     | NULL    |                |
+-- | text_one    | text        | YES  |     | NULL    |                |
+-- | text_two    | text        | YES  |     | NULL    |                |
+-- | text_three  | text        | YES  |     | NULL    |                |
+-- | text_four   | text        | YES  |     | NULL    |                |
+-- | image_one   | varchar(20) | YES  |     | NULL    |                |
+-- | image_two   | varchar(20) | YES  |     | NULL    |                |
+-- +-------------+-------------+------+-----+---------+----------------+
+
+
+-- DROP TABLE covid;
+
+-- CREATE TABLE covid(
+--     section_id TINYINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+--     heading_one VARCHAR(30),
+--     heading_two VARCHAR(30),
+--     text_one TEXT,
+--     text_two TEXT,
+--     text_three TEXT,
+--     text_four TEXT,
+--     image_one VARCHAR(20),
+--     image_two VARCHAR(20)
+-- );
+
+-- INSERT INTO covid (heading_one, heading_two, text_one, text_two, text_three, text_four, image_one, image_two)
+-- VALUES  ('Vaccination', 
+--         '', 
+--         'We encourage you to get vaccinated. COVID-19 vaccinations for are available at no cost from drive-through sites around the state.', 'After you are fully vaccinated for COVID-19, you may be able to start doing some things that you stopped doing because of the pandemic. For example, you can gather indoors without masks with other people who are fully vaccinated', 
+--         '', '', '', ''),
+--         ('', '', '', '', '', '', 'covid-img-2.jpg', ''),
+--         ('Social Distancing', 
+--         '', 
+--         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum quos earum aut delectus ut eligendi odit sapiente nisi quasi.', 
+--         'impedit eveniet nisi natus veniam odio iusto tenetur reiciendis assumenda autem molestiae quibusdam.', 
+--         '', '', '', '');

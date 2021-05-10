@@ -14,5 +14,6 @@ router.get("/", (req, res) => {
 router.use("/physicians", require("./routes/physicianRoutes"));
 router.use("/appointments", require("./routes/appointmentRoutes"));
 router.use("/content", require("./routes/dashboardRoutes"));
+router.use("/content", require("./routes/covidRoutes"));
 
 module.exports = router;

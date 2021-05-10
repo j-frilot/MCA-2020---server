@@ -14,6 +14,11 @@ router.get("/:id", (req, res) => {
     query.findById(res, query.table, req.params.id);
 });
 
+// find by id  :3000/api/physicians/name
+router.get("/:name", (req, res) => {
+    query.findByName(res, query.table, req.body.first_name);
+});
+
 // all of the male physicians   :3000/api/physicians/male
 router.get("/male", (req, res) => {
     query.male(res, query.table);

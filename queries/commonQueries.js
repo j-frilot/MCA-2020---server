@@ -1,6 +1,7 @@
 const conn = require("../db/dbconfig");
 const physicianQueries = require("./physicianQueries");
 const appoinmentQueries = require("./appointmentQueries");
+const covidQueries = require("./covidQueries");
 
 const commonQueries = {
     findAll: (res, table) => {

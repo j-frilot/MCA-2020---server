@@ -15,4 +15,14 @@ const dashboardQueries = {
     ...require("./dashboardQueries")
 };
 
-module.exports = { physicianQueries, appointmentQueries, dashboardQueries };
+const covidQueries = {
+    ...commonQueries,
+    ...require("./covidQueries")
+};
+
+module.exports = {
+    physicianQueries,
+    appointmentQueries,
+    dashboardQueries,
+    covidQueries
+};
