@@ -2,6 +2,7 @@ const conn = require("../db/dbconfig");
 const physicianQueries = require("./physicianQueries");
 const appoinmentQueries = require("./appointmentQueries");
 const covidQueries = require("./covidQueries");
+const dashboardQueries = require("./dashboardQueries");
 
 const commonQueries = {
     findAll: (res, table) => {
@@ -17,23 +18,6 @@ const commonQueries = {
                 console.log("Query Error", error);
             }
         });
-    },
-    findById: (res, table, id) => {
-        conn.query(
-            `SELECT * FROM ${table} WHERE ${table}_id = ?`,
-            [id],
-            (error, results) => {
-                if (!error) {
-                    if (results.length == 1) {
-                        res.json(...results);
-                    } else {
-                        res.json(results);
-                    }
-                } else {
-                    console.log("Query Error", error);
-                }
-            }
-        );
     }
 };
 

@@ -2,7 +2,23 @@ const conn = require("../db/dbconfig");
 
 const appointmentQueries = {
     table: "appointments",
-
+    apptdate: (res, table) => {
+        conn.execute(
+            `SELECT appointment_date FROM appointments`,
+            (error, results) => {
+                if (!error) {
+                    if (results.length == 1) {
+                        res.json(...results);
+                    } else {
+                        res.json(results);
+                    }
+                } else {
+                    console.log("Query Error", error);
+                }
+            }
+        );
+    },
+    table: "appointments",
     makeAppointment: (req, res) => {
         const patient_first_name = req.body.patient_first_name;
         const patient_last_name = req.body.patient_last_name;

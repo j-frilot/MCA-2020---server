@@ -2,11 +2,10 @@ const conn = require("../db/dbconfig");
 
 const physicianQueries = {
     table: "physicians",
-    findByName: (res, table) => {
-        conn.execute(
-            `SELECT * FROM physicians WHERE first_name LIKE %?%`,
-            ["?"],
-
+    findById: (res, table, id) => {
+        conn.query(
+            `SELECT * FROM physicians WHERE physicians_id = ?`,
+            [id],
             (error, results) => {
                 if (!error) {
                     if (results.length == 1) {
@@ -20,9 +19,11 @@ const physicianQueries = {
             }
         );
     },
-    male: (res, table) => {
-        conn.execute(
-            `SELECT * FROM physicians WHERE gender = "male"`,
+    table: "physicians",
+    filterName: (res, str) => {
+        conn.query(
+            `SELECT *  FROM physicians WHERE (first_name LIKE CONCAT('%', ? , '%')) OR (last_name LIKE CONCAT('%', ? , '%'))`,
+            [str, str],
             (error, results) => {
                 if (!error) {
                     if (results.length == 1) {
@@ -35,36 +36,9 @@ const physicianQueries = {
                 }
             }
         );
-    },
-    female: (res, table) => {
-        conn.execute(
-            `SELECT * FROM physicians WHERE gender = "female"`,
-            (error, results) => {
-                if (!error) {
-                    if (results.length == 1) {
-                        res.json(...results);
-                    } else {
-                        res.json(results);
-                    }
-                } else {
-                    console.log("Query Error", error);
-                }
-            }
-        );
-    },
-    specialties: (res, table) => {
-        conn.execute(`SELECT specialty from physicians;`, (error, results) => {
-            if (!error) {
-                if (results.length == 1) {
-                    res.json(...results);
-                } else {
-                    res.json(results);
-                }
-            } else {
-                console.log("Query Error", error);
-            }
-        });
     }
 };
-
+// `SELECT *  FROM physicians WHERE first_name LIKE CONCAT('%',?,'%')`,
+// SELECT first_name, last_name FROM physicians WHERE (first_name LIKE '%w%') OR (last_name LIKE '%w%')
+// `SELECT first_name, last_name FROM physicians WHERE (first_name LIKE CONCAT('%', ? , '%')) OR (last_name LIKE // CONCAT('%', ? , '%'))`,
 module.exports = physicianQueries;
