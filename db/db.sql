@@ -1,9 +1,19 @@
--- CREATE DATABASE hospital;
 
+-- +--------------------+
+-- | Tables_in_hospital |
+-- +--------------------+
+-- | appointments       |
+-- | contact            |
+-- | covid              |
+-- | dashboard          |
+-- | patients           |
+-- | physicians         |
+-- +--------------------+
+
+-- CREATE DATABASE hospital;
 USE hospital;
 
--- ///////////////////////////////////////////////////////////////////////////////////////////
--- ///////////////////////////////////////////////////////////////////////////////////////////
+
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 
 -- PHYSICIANS
@@ -29,6 +39,7 @@ USE hospital;
 --     physicians_id TINYINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 --     first_name VARCHAR(30),
 --     last_name VARCHAR(30),
+--     suffix VARCHAR(5),
 --     specialty VARCHAR(50),
 --     photo VARCHAR(50),
 --     gender VARCHAR(10),
@@ -39,24 +50,24 @@ USE hospital;
 -- );
 
 
--- INSERT INTO physicians (first_name, last_name, specialty, photo, gender, telephone,education, office, info)
--- VALUES  ('steven'   , 'santiago', 'podiatry'                , 'face-1.jpg' , 'male'  , '257-852-6428', 'rock universiry',                   'e5954',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('jan'      , 'sharp'   , 'nephrology'              , 'face-2.jpg' , 'female', '459-821-4896', 'maine medical college',             'e694',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('joy'      , 'mckenzie', 'pulmonology'             , 'face-3.jpg' , 'female', '125-548-9658', 'st. john medical college',          'f3564',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('sophie'   , 'mccormik', 'general surgery'         , 'face-4.jpg' , 'female', '128-745-3654', 'springfield university',            'e9633',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('dave'     , 'morrison', 'neurosurgery'            , 'face-5.jpg' , 'male'  , '456-852-6479', 'blue mountain state university',    'f65',    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('leigh'    , 'morton'  , 'internal medicine'       , 'face-6.jpg' , 'female', '945-614-7526', 'monsters school of medicine',       'e123',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('jamie'    , 'rodgers' , 'urology'                 , 'face-7.jpg' , 'female', '845-319-7425', 'empire state university',           'h741',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('horace'   , 'roberts' , 'anesthesiology'          , 'face-8.jpg' , 'male'  , '345-542-6248', 'fair college',                      'g12521', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('clara'    , 'burke'   , 'maternal, fetal medicine', 'face-9.jpg' , 'female', '545-758-8524', 'empire medical school',             'e5677',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('geneva'   , 'curtis'  , 'cardiology'              , 'face-10.jpg', 'female', '914-536-7428', 'greendale school of medicine',      'f964',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('meghan'   , 'brewer'  , 'gastroenterology'        , 'face-11.jpg', 'female', '345-635-4896', 'pennyham state university',         'g14',    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('vernon'   , 'owens'   , 'family medicine'         , 'face-12.jpg', 'male'  , '354-965-7485', 'hudson medical school',             'e8699',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('lynn'     , 'greene'  , 'pediatrics'              , 'face-13.jpg', 'female', '384-962-7484', 'quohog health sciences university', 'f1478',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('heather'  , 'sherman' , 'internal medicine'       , 'face-14.jpg', 'female', '504-365-9757', 'city university',                   'g574',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('johnathan', 'erikson' , 'gynecology'              , 'face-15.jpg', 'male'  , '364-242-1585', 'cool state university',             'e469',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('joe'      , 'chandler', 'dermatology'             , 'face-16.jpg', 'male'  , '125-458-6585', 'medical college of hill valley',    'h496',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
---         ('angeline' , 'collins' , 'neurology'               , 'face-17.jpg', 'female', '852-456-9517', 'ross medical college',              'h9677',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.');
+-- INSERT INTO physicians (first_name, last_name, suffix, specialty, photo, gender, telephone,education, office, info)
+-- VALUES  ('steven'   , 'santiago', 'M.D.', 'podiatry'                , 'face-1.jpg' , 'male'  , '257-852-6428', 'rock universiry',                   'e5954',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('jan'      , 'sharp'   , 'M.D.', 'nephrology'              , 'face-2.jpg' , 'female', '459-821-4896', 'maine medical college',             'e694',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('joy'      , 'mckenzie', 'M.D.', 'pulmonology'             , 'face-3.jpg' , 'female', '125-548-9658', 'st. john medical college',          'f3564',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('sophie'   , 'mccormik', 'M.D.', 'general surgery'         , 'face-4.jpg' , 'female', '128-745-3654', 'springfield university',            'e9633',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('dave'     , 'morrison', 'D.O.', 'neurosurgery'            , 'face-5.jpg' , 'male'  , '456-852-6479', 'blue mountain state university',    'f65',    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('leigh'    , 'morton'  , 'D.O.', 'internal medicine'       , 'face-6.jpg' , 'female', '945-614-7526', 'monsters school of medicine',       'e123',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('jamie'    , 'rodgers' , 'M.D.', 'urology'                 , 'face-7.jpg' , 'female', '845-319-7425', 'empire state university',           'h741',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('horace'   , 'roberts' , 'M.D.', 'anesthesiology'          , 'face-8.jpg' , 'male'  , '345-542-6248', 'fair college',                      'g12521', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('clara'    , 'burke'   , 'D.O.', 'maternal, fetal medicine', 'face-9.jpg' , 'female', '545-758-8524', 'empire medical school',             'e5677',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('geneva'   , 'curtis'  , 'M.D.', 'cardiology'              , 'face-10.jpg', 'female', '914-536-7428', 'greendale school of medicine',      'f964',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('meghan'   , 'brewer'  , 'M.D.', 'gastroenterology'        , 'face-11.jpg', 'female', '345-635-4896', 'pennyham state university',         'g14',    'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('vernon'   , 'owens'   , 'M.D.', 'family medicine'         , 'face-12.jpg', 'male'  , '354-965-7485', 'hudson medical school',             'e8699',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('lynn'     , 'greene'  , 'M.D.', 'pediatrics'              , 'face-13.jpg', 'female', '384-962-7484', 'quohog health sciences university', 'f1478',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('heather'  , 'sherman' , 'D.O.', 'internal medicine'       , 'face-14.jpg', 'female', '504-365-9757', 'city university',                   'g574',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('johnathan', 'erikson' , 'M.D.', 'gynecology'              , 'face-15.jpg', 'male'  , '364-242-1585', 'cool state university',             'e469',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('joe'      , 'chandler', 'D.O.', 'dermatology'             , 'face-16.jpg', 'male'  , '125-458-6585', 'medical college of hill valley',    'h496',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+--         ('angeline' , 'collins' , 'D.O.', 'neurology'               , 'face-17.jpg', 'female', '852-456-9517', 'ross medical college',              'h9677',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.');
 
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
@@ -206,3 +217,33 @@ USE hospital;
 --         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum quos earum aut delectus ut eligendi odit sapiente nisi quasi.', 
 --         'impedit eveniet nisi natus veniam odio iusto tenetur reiciendis assumenda autem molestiae quibusdam.', 
 --         '', '', '', '');
+
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+
+-- contact
+ 
+-- +-------------------+-------------+------+-----+---------+----------------+
+-- | Field             | Type        | Null | Key | Default | Extra          |
+-- +-------------------+-------------+------+-----+---------+----------------+
+-- | id                | int         | NO   | PRI | NULL    | auto_increment |
+-- | person_first_name | varchar(30) | NO   |     | NULL    |                |
+-- | person_last_name  | varchar(30) | YES  |     | NULL    |                |
+-- | email             | varchar(30) | NO   |     | NULL    |                |
+-- | message           | text        | YES  |     | NULL    |                |
+-- +-------------------+-------------+------+-----+---------+----------------+
+
+-- DROP TABLE contact;
+
+-- CREATE TABLE contact(
+--     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+--     person_first_name VARCHAR(30) NOT NULL,
+--     person_last_name VARCHAR(30),
+--     email VARCHAR(30) NOT NULL,
+--     message TEXT
+-- );
+
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////////////////////////////////////////////

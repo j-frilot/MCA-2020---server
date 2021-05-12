@@ -20,9 +20,15 @@ const covidQueries = {
     ...require("./covidQueries")
 };
 
+const contactQueries = {
+    ...commonQueries,
+    ...require("./contactQueries")
+};
+
 module.exports = {
     physicianQueries,
     appointmentQueries,
     dashboardQueries,
-    covidQueries
+    covidQueries,
+    contactQueries
 };

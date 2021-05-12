@@ -16,5 +16,6 @@ router.use("/physicians", require("./routes/physicianRoutes"));
 router.use("/appointments", require("./routes/appointmentRoutes"));
 router.use("/dash", require("./routes/dashboardRoutes"));
 router.use("/covid", require("./routes/covidRoutes"));
+router.use("/contact-us", require("./routes/contactRoutes"));
 
 module.exports = router;
