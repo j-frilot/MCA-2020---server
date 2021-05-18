@@ -17,5 +17,7 @@ router.use("/appointments", require("./routes/appointmentRoutes"));
 router.use("/dash", require("./routes/dashboardRoutes"));
 router.use("/covid", require("./routes/covidRoutes"));
 router.use("/contact-us", require("./routes/contactRoutes"));
+router.use("/header", require("./routes/headerRoutes"));
+router.use("/footer", require("./routes/footerRoutes"));
 
 module.exports = router;

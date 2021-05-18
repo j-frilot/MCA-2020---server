@@ -3,6 +3,8 @@ const physicianQueries = require("./physicianQueries");
 const appoinmentQueries = require("./appointmentQueries");
 const covidQueries = require("./covidQueries");
 const dashboardQueries = require("./dashboardQueries");
+const headerQueries = require("./headerQueries");
+const footerQueries = require("./footerQueries.js");
 
 const commonQueries = {
     findAll: (res, table) => {

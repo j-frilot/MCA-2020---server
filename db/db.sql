@@ -51,7 +51,7 @@ USE hospital;
 
 
 -- INSERT INTO physicians (first_name, last_name, suffix, specialty, photo, gender, telephone,education, office, info)
--- VALUES  ('steven'   , 'santiago', 'M.D.', 'podiatry'                , 'face-1.jpg' , 'male'  , '257-852-6428', 'rock universiry',                   'e5954',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
+-- VALUES  ('steven'   , 'santiago', 'M.D.', 'podiatry'                , 'face-1.jpg' , 'male'  , '257-852-6428', 'rock university',                   'e5954',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
 --         ('jan'      , 'sharp'   , 'M.D.', 'nephrology'              , 'face-2.jpg' , 'female', '459-821-4896', 'maine medical college',             'e694',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
 --         ('joy'      , 'mckenzie', 'M.D.', 'pulmonology'             , 'face-3.jpg' , 'female', '125-548-9658', 'st. john medical college',          'f3564',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
 --         ('sophie'   , 'mccormik', 'M.D.', 'general surgery'         , 'face-4.jpg' , 'female', '128-745-3654', 'springfield university',            'e9633',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
@@ -135,10 +135,10 @@ USE hospital;
 --     height SMALLINT,
 --     weight SMALLINT
 -- );
-
+--
 -- INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight)
 --     VALUES  ('ian', 'warner', 4, '2021-01-12', 'saviors covered', '414-965-7854', 'i need a new eye', 60, 180);
-
+--
 
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
@@ -156,20 +156,20 @@ USE hospital;
 -- +------------+-------------+------+-----+---------+----------------+
 
 -- DROP TABLE dashboard;
-
+--
 -- CREATE TABLE dashboard(
 --     section_id TINYINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 --     heading VARCHAR(30) NOT NULL,
 --     body TEXT NOT NULL,
 --     link VARCHAR(20)
 -- );
-
+--
 -- INSERT INTO dashboard (heading, body, link)
 -- VALUES  ('find a doctor', 'Find the doctor who’s right for you. We are staffed by the nation’s top physicians.', 'physicians'),
 --         ('COVID-19'     , 'COVID-19 vaccinations for are available at no cost. The General Hospital will allow one visitor per day for inpatients and those in our Emergency Department.', 'covid'),
 --         ('appointments' , "Find the doctor who’s right for you. The General is staffed by the nation's top physicians.", 'appointments'),
 --         ('find a doctor', "Find the doctor who’s right for you. We are staffed by the nation's top physicians." , 'physicians');
-
+--
 
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
@@ -205,7 +205,7 @@ USE hospital;
 --     image_one VARCHAR(20),
 --     image_two VARCHAR(20)
 -- );
-
+--
 -- INSERT INTO covid (heading_one, heading_two, text_one, text_two, text_three, text_four, image_one, image_two)
 -- VALUES  ('Vaccination', 
 --         '', 
@@ -217,7 +217,7 @@ USE hospital;
 --         'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum quos earum aut delectus ut eligendi odit sapiente nisi quasi.', 
 --         'impedit eveniet nisi natus veniam odio iusto tenetur reiciendis assumenda autem molestiae quibusdam.', 
 --         '', '', '', '');
-
+--
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
@@ -243,7 +243,62 @@ USE hospital;
 --     email VARCHAR(30) NOT NULL,
 --     message TEXT
 -- );
+--
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+-- ///////////////////////////////////////////////////////////////////////////////////////////
+
+-- header/footer content
+
+-- +------------+-------------+------+-----+---------+----------------+
+-- | Field      | Type        | Null | Key | Default | Extra          |
+-- +------------+-------------+------+-----+---------+----------------+
+-- | id         | int         | NO   | PRI | NULL    | auto_increment |
+-- | heading    | varchar(30) | NO   |     | NULL    |                |
+-- | link_one   | varchar(50) | YES  |     | NULL    |                |
+-- | link_two   | varchar(50) | YES  |     | NULL    |                |
+-- | link_three | varchar(50) | YES  |     | NULL    |                |
+-- | link_four  | varchar(50) | YES  |     | NULL    |                |
+-- | link_five  | varchar(50) | YES  |     | NULL    |                |
+-- | link_six   | varchar(50) | YES  |     | NULL    |                |
+-- +------------+-------------+------+-----+---------+----------------+
+
+
+-- DROP TABLE header;
+
+-- CREATE TABLE header(
+--     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+--     link_one VARCHAR(50),
+--     link_two VARCHAR(50),
+--     link_three VARCHAR(50),
+--     link_four VARCHAR(50),
+--     link_five VARCHAR(50)
+-- );
+
+-- INSERT INTO header (link_one, link_two, link_three, link_four, link_five)
+-- VALUES  ('physicians', 'covid', 'appointments', 'contact', 'home'),
+-- ('physicians', 'covid', 'appointments', 'contact', 'home');
+
+
 
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
 -- ///////////////////////////////////////////////////////////////////////////////////////////
+
+
+-- DROP TABLE footer;
+-- CREATE TABLE footer(
+--     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+--     heading VARCHAR(30) NOT NULL,
+--     link_one VARCHAR(100),
+--     link_two VARCHAR(100),
+--     link_three VARCHAR(100),
+--     link_four VARCHAR(100)
+-- );
+
+-- INSERT INTO footer (heading, link_one, link_two, link_three, link_four)
+-- VALUES  
+--         ('contact us',       '125 main street', 'codeville ms 12012', '555-555-5555',  'directions'),
+--         ('general hospital', 'Contact Us',        'Covid-19 Info',            'Our Physicians', 'Appointments'),
+--         ('helpful links', 'Centers for Disease Control & Intervention', 'Mississippi Department of Health', 'John Hopkins Corona Resourse Center', ''),
+--         ('other',            'donate',          'subscribe to newsletter', 'facebook',  '');

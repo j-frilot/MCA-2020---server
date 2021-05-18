@@ -25,10 +25,22 @@ const contactQueries = {
     ...require("./contactQueries")
 };
 
+const headerQueries = {
+    ...commonQueries,
+    ...require("./headerQueries")
+};
+
+const footerQueries = {
+    ...commonQueries,
+    ...require("./footerQueries.js")
+};
+
 module.exports = {
     physicianQueries,
     appointmentQueries,
     dashboardQueries,
     covidQueries,
-    contactQueries
+    contactQueries,
+    headerQueries,
+    footerQueries
 };
