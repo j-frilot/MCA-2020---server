@@ -1,0 +1,118 @@
++--------------------+
+| Tables_in_hospital |
++--------------------+
+| appointments       |
+| contact            |
+| covid              |
+| dashboard          |
+| footer             |
+| header             |
+| patients           |
+| physicians         |
++--------------------+
+
+
+-- PHYSICIANS
+-- +---------------+-------------+------+-----+---------+----------------+
+-- | Field         | Type        | Null | Key | Default | Extra          |
+-- +---------------+-------------+------+-----+---------+----------------+
+-- | physicians_id | tinyint     | NO   | PRI | NULL    | auto_increment |
+-- | first_name    | varchar(30) | YES  |     | NULL    |                |
+-- | last_name     | varchar(30) | YES  |     | NULL    |                |
+-- | specialty     | varchar(50) | YES  |     | NULL    |                |
+-- | photo         | varchar(50) | YES  |     | NULL    |                |
+-- | gender        | varchar(10) | YES  |     | NULL    |                |
+-- | telephone     | varchar(15) | YES  |     | NULL    |                |
+-- | education     | varchar(40) | YES  |     | NULL    |                |
+-- | office        | varchar(10) | YES  |     | NULL    |                |
+-- | info          | text        | YES  |     | NULL    |                |
+-- +---------------+-------------+------+-----+---------+----------------+
+
+-- PATIENTS
+-- +------------+-------------+------+-----+---------+----------------+
+-- | Field      | Type        | Null | Key | Default | Extra          |
+-- +------------+-------------+------+-----+---------+----------------+
+-- | patient_id | tinyint     | NO   | PRI | NULL    | auto_increment |
+-- | first_name | VARCHAR(30) | YES  |     | NULL    |                |
+-- | last_name  | VARCHAR(30) | YES  |     | NULL    |                |
+-- | gender     | VARCHAR(15) | YES  |     | NULL    |                |
+-- | height     | smallint    | YES  |     | NULL    |                |
+-- | weight     | smallint    | YES  |     | NULL    |                |
+-- | dob        | date        | YES  |     | NULL    |                |
+-- +------------+-------------+------+-----+---------+----------------+
+
+-- APPOINTMENTS
+-- +--------------------+-------------+------+-----+---------+----------------+
+-- | Field              | Type        | Null | Key | Default | Extra          |
+-- +--------------------+-------------+------+-----+---------+----------------+
+-- | appointment_id     | tinyint     | NO   | PRI | NULL    | auto_increment |
+-- | patient_first_name | varchar(30) | YES  |     | NULL    |                |
+-- | patient_last_name  | varchar(30) | YES  |     | NULL    |                |
+-- | physicians_id      | int         | YES  |     | NULL    |                |
+-- | appointment_date   | date        | YES  |     | NULL    |                |
+-- | insurance          | varchar(20) | YES  |     | NULL    |                |
+-- | telephone          | varchar(15) | YES  |     | NULL    |                |
+-- | comments           | text        | YES  |     | NULL    |                |
+-- | height             | smallint    | YES  |     | NULL    |                |
+-- | weight             | smallint    | YES  |     | NULL    |                |
+-- +--------------------+-------------+------+-----+---------+----------------+
+-- 
+
+-- DASHBOARD
+-- +------------+-------------+------+-----+---------+----------------+
+-- | Field      | Type        | Null | Key | Default | Extra          |
+-- +------------+-------------+------+-----+---------+----------------+
+-- | section_id | tinyint     | NO   | PRI | NULL    | auto_increment |
+-- | heading    | varchar(30) | NO   |     | NULL    |                |
+-- | body       | text        | NO   |     | NULL    |                |
+-- +------------+-------------+------+-----+---------+----------------+
+
+-- COVID
+-- +-------------+-------------+------+-----+---------+----------------+
+-- | Field       | Type        | Null | Key | Default | Extra          |
+-- +-------------+-------------+------+-----+---------+----------------+
+-- | section_id  | tinyint     | NO   | PRI | NULL    | auto_increment |
+-- | heading_one | varchar(30) | YES  |     | NULL    |                |
+-- | heading_two | varchar(30) | YES  |     | NULL    |                |
+-- | text_one    | text        | YES  |     | NULL    |                |
+-- | text_two    | text        | YES  |     | NULL    |                |
+-- | text_three  | text        | YES  |     | NULL    |                |
+-- | text_four   | text        | YES  |     | NULL    |                |
+-- | image_one   | varchar(20) | YES  |     | NULL    |                |
+-- | image_two   | varchar(20) | YES  |     | NULL    |                |
+-- +-------------+-------------+------+-----+---------+----------------+
+
+-- CONTACT
++-------------------+-------------+------+-----+---------+----------------+
+| Field             | Type        | Null | Key | Default | Extra          |
++-------------------+-------------+------+-----+---------+----------------+
+| id                | int         | NO   | PRI | NULL    | auto_increment |
+| person_first_name | varchar(30) | NO   |     | NULL    |                |
+| person_last_name  | varchar(30) | YES  |     | NULL    |                |
+| email             | varchar(30) | NO   |     | NULL    |                |
+| message           | text        | YES  |     | NULL    |                |
++-------------------+-------------+------+-----+---------+----------------+
+
+-- HEADER
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| link_one   | varchar(50) | YES  |     | NULL    |                |
+| link_two   | varchar(50) | YES  |     | NULL    |                |
+| link_three | varchar(50) | YES  |     | NULL    |                |
+| link_four  | varchar(50) | YES  |     | NULL    |                |
+| link_five  | varchar(50) | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+-- FOOTER
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | int         | NO   | PRI | NULL    | auto_increment |
+| link_one   | varchar(50) | YES  |     | NULL    |                |
+| link_two   | varchar(50) | YES  |     | NULL    |                |
+| link_three | varchar(50) | YES  |     | NULL    |                |
+| link_four  | varchar(50) | YES  |     | NULL    |                |
+| link_five  | varchar(50) | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+

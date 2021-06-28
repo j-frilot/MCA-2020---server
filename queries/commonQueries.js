@@ -1,4 +1,4 @@
-const conn = require("../db/dbconfig");
+const pool = require("../db/dbconfig");
 const physicianQueries = require("./physicianQueries");
 const appoinmentQueries = require("./appointmentQueries");
 const covidQueries = require("./covidQueries");
@@ -8,7 +8,7 @@ const footerQueries = require("./footerQueries.js");
 
 const commonQueries = {
     findAll: (res, table) => {
-        conn.execute(`SELECT * FROM ${table}`, (error, results) => {
+        pool.execute(`SELECT * FROM ${table}`, (error, results) => {
             if (!error) {
                 if (results.length == 1) {
                     res.json(...results);
