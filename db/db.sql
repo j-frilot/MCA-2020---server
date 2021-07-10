@@ -9,7 +9,7 @@
 -- | patients           |
 -- | physicians         |
 -- +--------------------+
-DROP DATABASE hospital;
+-- DROP DATABASE hospital;
 CREATE DATABASE hospital;
 USE hospital;
 
